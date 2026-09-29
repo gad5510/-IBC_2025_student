@@ -1,11 +1,11 @@
-#connecting a new line of data to the chart 
+# connecting a new line of data to the chart 
 ​
 ​
 keys= ["Codon"]
 keys
 ['Codon']
 
-#creating a list that usues the codon data as the key and the symbol colom as a value 
+# creating a list that usues the codon data as the key and the symbol colom as a value 
 codon_dict
 {'AAA': 'K',
  'AAC': 'N',
@@ -71,6 +71,9 @@ codon_dict
  'TTC': 'F',
  'TTG': 'L',
  'TTT': 'F'}
+
+>[!WARNING]
+>This is a dictionary not a list. YOu're also missing an "=" sign
 
 #creating a list that uses the codon data as the key and the symbol column as a value 
 codon_dict
@@ -139,6 +142,8 @@ codon_dict
  'TTG': 'L',
  'TTT': 'F'}
 '
+>[!WARNING]
+>Not clear why you created a dictionary again here. 
 #creating a string with spaces 
 
 string = 'CTA GGA GTG ATT TCG'
