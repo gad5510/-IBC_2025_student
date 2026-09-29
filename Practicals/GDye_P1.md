@@ -17,3 +17,6 @@ Section 2 exercise
 2. 19509
 3.  wc -w /Users/karendye/IntroBiolComp-2026/Unix/DataFiles/CodonTable.tsv     195
 4. TTT        Phe        F
+
+>[!NOTE]
+>You didn't use any of the markdown functions in this document. 
