@@ -82,6 +82,49 @@ grep -oi "isolation" origin.txt | wc -l
 grep -i -C 3 "sterility" the_origin.txt > sterilty_count.txt
 grep -i -C 3 "isolation" the_origin.txt > isolation_context.txt
 
-#D
+#D 
+Below is an image
+![isolation](isolation.png)
+
+And here is another 
+![sterity](sterilty.png)
+
+#E No, Darwin in these clouds uses a lot of words such as hybrid species and fertility in the sterilty image and words like favorable, natural selection, and intercrossed. While he might not have understood it fully, he used words that described different characteristics of how we get new species
+
+#3 Twelve days of Christmas 
+
+#a
+# List of the 12 gifts
+gifts = ["A Partridge in a Pear Tree",
+    "Two Turtle Doves, and",
+    "Three French Hens",
+    "Four Colly Birds",
+    "Five Gold Rings",
+    "Six Geese-a-Laying",
+    "Seven Swans-a-Swimming",
+    "Eight Maids-a-Milking",
+    "Nine Ladies Dancing",
+    "Ten Lords-a-Leaping",
+    "Eleven Pipers Piping",
+    "Twelve Drummers Drumming"]
+
+#names of the 12 day
+days = ["First", "Second", "Third", "Fourth","Fifth", "Sixth", "Seventh", "Eighth","Ninth", "Tenth", "Eleventh", "Twelfth"]
+
+
+#go through each day of Christmas 
+for day in range(12):
+
+    # Print the heading for that day
+    print("On the", days[day], "day of Christmas my true love gave to me:")
+
+    #rint the gifts starting with the newest gift
+    for gift in range(day, -1, -1):
+        print(gifts[gift])
+
+    #Print a blank line between verses
+    print()
+
+
 
 
