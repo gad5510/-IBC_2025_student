@@ -125,6 +125,13 @@ for day in range(12):
     #Print a blank line between verses
     print()
 
+#4 Submission instructions 
+#going to repository
+$ cd /Users/karendye/IntroBiolcomp-2026 
+#creating file
+$ mkdir -p Assignments
+
+$
 
 
 
