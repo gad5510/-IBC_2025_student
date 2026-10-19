@@ -63,7 +63,7 @@ print(count)
 
 #creates a file 
 output = open("Num_samples.csv", "w")
-#opens a loop that writes in the file, takes the individual ID and counted number and piuts it in seperate colomns 
+#opens a loop that writes in the file, takes the individual ID and counted number and puts it in separate columns 
 for individual in count:
     output.write(individual + "\t" + str(count[individual]) + "\n")
 #closes file
@@ -73,7 +73,7 @@ output.close()
 ###2.Mining The Origin of Species 
 
 #B sterility = 97.  isolation = 12
-#using grep to count thw word
+#using grep to count the word
 grep -oi "sterility" origin.txt | wc -l
 grep -oi "isolation" origin.txt | wc -l
 
