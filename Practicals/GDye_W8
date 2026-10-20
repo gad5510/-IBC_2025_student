@@ -1,1 +1,32 @@
+#Final problem  W8
+#1
+
+##1. 124
+
+##2 rowSums(geno[, 5:7])
+
+##3 
+> disease <- read.csv("R/DataFiles/SNP_risks.csv", header = TRUE)
+> geno <- cbind(geno, disease[,3])
+> View(geno)
+
+##4 
+> names(geno)
+[1] "CHR"          "SNP"          "A1"          
+[4] "A2"           "nA1A1"        "nA1A2"       
+[7] "nA2A2"        "disease[, 3]"
+
+> mean(geno$nA1A2[geno[, 8] == "Risk"])
+[1] 37.31296
+
+#2
+
+##1 
+> sp <- read.table("R/DataFiles/Smith2003_data.txt", sep="\t")
+> nrow(sp)
+[1] 5731
+
+##2
+
+By using the "Find" and "Replace" tool in R, "5544 occurrences"
 
