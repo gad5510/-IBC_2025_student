@@ -1,1 +1,25 @@
+#problem 1 
 
+saav <- "R/DataFiles/Saavedra2013/" 
+> f <- list.files("R/DataFiles/Saavedra2013/")
+
+
+> bianary <- "\\txt$"
+> results <-  data.frame()
+
+for (file in f) {
++     
++ mat <- read.table(paste("R/DataFiles/Saavedra2013",file, sep = "/"))
++     
++ results <- rbind(results, data.frame( File = file, Nrow = nrow(mat), Ncol = ncol(mat), p_1 = mean(as.matrix(mat) == 1), p_0 = mean(as.matrix(mat) == 0)))}
+> write.table(results, "matrixstats.tsv", sep = "\t", row.names = FALSE)
+
+#leaf area
+> source("R/DataFiles/leafarea/getArea.R")
+> f <- list.files("R/DataFiles/leafarea",
++ pattern = "\\.JPG$", ignore.case = TRUE, full.names = TRUE)
+> 
+> results <- data.frame()
+> 
+> for (file in f) {
++ results <- rbind(results, data.frame( File = basename(file), Area = getArea(file)))}
