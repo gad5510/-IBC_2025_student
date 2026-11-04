@@ -1,0 +1,94 @@
+#Grant Dye
+##1
+
+toads <- read.delim("Toad_Handedness.tsv")
+str(toads)
+table(toads$Sex)
+
+nExp <- 100000
+
+sim_toad <- function(right, n, nExp = 100000){
+  sims <- rbinom(nExp, size = n, prob = 0.5)
+  mean(abs(sims - n/2) >= abs(right - n/2))
+}
+
+
+toads$p <- mapply(sim_toad, toads$N_rights, toads$N_trials)
+toads$handedness <- ifelse(toads$p >= 0.05, "none",
+                           ifelse(toads$N_rights > toads$N_trials/2, "right", "left"))
+toads[, c("Toad", "Sex", "N_rights", "N_trials", "p", "handedness")]
+
+##2
+
+handed <- toads[toads$handedness != "none", ]
+nHanded <- nrow(handed)
+nRightToads <- sum(handed$handedness == "right")
+
+sims <- rbinom(nExp, size = nHanded, prob = 0.5)
+p2 <- mean(abs(sims - nHanded/2) >= abs(nRightToads - nHanded/2))
+nHanded; nRightToads; p2
+
+###results 
+### 14
+### 11
+### 0.05689
+###14 of the 18 toads showe handednes 11 of those 14 were right handed
+
+##3
+
+toads$prop_right <- toads$N_rights / toads$N_trials
+
+obs_diff <- mean(toads$prop_right[toads$Sex == "M"]) -
+  mean(toads$prop_right[toads$Sex == "F"])
+
+nPer <- 10000
+diffs <- numeric(nPer)
+for(i in 1:nPer){
+  shuf <- sample(toads$Sex)
+  diffs[i] <- mean(toads$prop_right[shuf == "M"]) -
+    mean(toads$prop_right[shuf == "F"])
+}
+p3 <- sum(abs(diffs) >= abs(obs_diff)) / nPer
+obs_diff; p3
+
+###results
+### 0.1175654
+### 0.4394
+
+
+#2
+
+##1
+
+jiang <- read.delim("Jiang2013_data.csv")
+names(jiang)         
+unique(jiang$Taxon)
+sum(is.na(jiang$r))
+table(jiang$Taxon)
+
+
+mean_r <- function(taxon){
+  mean(jiang$r[jiang$Taxon == taxon])
+}
+
+
+##2
+
+taxon_p <- function(taxon){
+  obs <- mean_r(taxon)
+  n <- sum(jiang$Taxon == taxon)
+  rand_means <- c()
+  for(i in 1:50000){
+    rand_means[i] <- mean(sample(jiang$r, size = n))
+  }
+  sum(rand_means >= obs) / 50000
+}
+
+tax <- unique(jiang$Taxon)
+results <- data.frame(Taxon = tax,
+                      n = as.vector(table(jiang$Taxon)[tax]),
+                      mean_r = sapply(tax, mean_r),
+                      p = sapply(tax, taxon_p))
+results
+
+
