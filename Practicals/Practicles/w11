@@ -1,0 +1,18 @@
+###final problem 
+##1
+
+plot(NULL,xlim = c(0, 5), ylim = c(0, 6),
+     #setting limits for graph
+     axes = FALSE,# removing the axis
+     xlab = "", ylab = "")# removing the x and y axis lables
+box()
+pch_vals <- 0:25
+
+col_idx  <- pch_vals %% 5# 4 across
+row_idx  <- pch_vals %/% 5# 5 down
+
+x <- col_idx + 0.5
+y <- 5.5 - row_idx
+
+points(x, y, pch = pch_vals, cex = 4)# setting pch value of the position it was give (0 at 0 is a pch = 0 )
+text(x - 0.4, y, labels  = pch_vals)
