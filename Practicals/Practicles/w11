@@ -16,3 +16,28 @@ y <- 5.5 - row_idx
 
 points(x, y, pch = pch_vals, cex = 4)# setting pch value of the position it was give (0 at 0 is a pch = 0 )
 text(x - 0.4, y, labels  = pch_vals)
+
+##2
+sea_lion <- data.frame(
+  Age    = 1:30,
+  Female = c(0.73, 0.69, 0.92, 0.94, 0.96, 0.97, 0.97, 0.97, 0.96, 0.95,
+             0.93, 0.91, 0.89, 0.87, 0.85, 0.83, 0.80, 0.78, 0.75, 0.72,
+             0.68, 0.61, 0.52, 0.40, 0.27, 0.15, 0.05, 0.01, 0, 0),
+  Male   = c(0.73, 0.49, 0.82, 0.82, 0.93, 0.93, 0.92, 0.91, 0.89, 0.86,
+             0.81, 0.74, 0.65, 0.55, 0.43, 0.31, 0.17, 0.02, 0, 0,
+             0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+  #inserting the data
+)
+plot(sea_lion$Male, type = "o", pch = 18, #plotting the male sea lion life span
+     col = "steelblue", bg = "steelblue",#coloring
+     xlab= "Age", ylab = "Survival",#labling
+     ylim = c(0,1.2), xlim=c(0,30),#setting limits on data (1.2 - 0)
+     cex = 1.5, lwd = 4)#setting size of points and lines
+lines(sea_lion$Female, type = "o", pch = 15, col = "tomato3", cex = 1.5, lwd = 4)
+#doing all the same for females
+
+
+# i like this graph because I feel like it portrays the data given very simply
+
+
+
