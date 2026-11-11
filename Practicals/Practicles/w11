@@ -39,5 +39,12 @@ lines(sea_lion$Female, type = "o", pch = 15, col = "tomato3", cex = 1.5, lwd = 4
 
 # i like this graph because I feel like it portrays the data given very simply
 
+#original image given (fig 2)
+#https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0140982&type=printable
+
+#aniscalco, J. M., Springer, A. M., Adkison, M. D., & Parker, P. (2015). 
+Population trend and elasticities of vital rates for Steller sea lions 
+(Eumetopias jubatus) in the eastern Gulf of Alaska: A new life-history 
+table analysis. PLOS ONE, 10(10), e0140982. https://doi.org/10.1371/journal.pone.0140982
 
 
